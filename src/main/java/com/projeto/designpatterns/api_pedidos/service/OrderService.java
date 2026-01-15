@@ -23,7 +23,7 @@ public class OrderService {
     }
     @Transactional
     public OrderResponseDTO createOrder(OrderRequestDTO dto) {
-        Order order = new Order(dto.value());
+        Order order = new Order(dto.value(), dto.paymentType());
         repository.save(order);
 
         publisher.publishEvent(new PaymentEvent(order.getId()));

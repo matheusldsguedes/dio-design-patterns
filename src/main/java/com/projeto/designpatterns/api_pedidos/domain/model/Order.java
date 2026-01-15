@@ -31,9 +31,10 @@ public class Order {
     public Order() {
     }
 
-    public Order(BigDecimal value) {
+    public Order(BigDecimal value, PaymentType paymentType) {
         this.value = value;
         this.status = OrderStatus.PENDING;
+        this.paymentType = paymentType;
         this.creationSchedule = LocalDateTime.now();
     }
     public void markAsPaid(){

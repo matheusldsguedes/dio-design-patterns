@@ -6,7 +6,9 @@ import com.projeto.designpatterns.api_pedidos.repository.OrderRepository;
 import com.projeto.designpatterns.api_pedidos.service.OrderService;
 import com.projeto.designpatterns.api_pedidos.service.PaymentService;
 import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PaymentEventListener {
     private final OrderRepository repository;
     private final PaymentService paymentService;
