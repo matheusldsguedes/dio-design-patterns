@@ -1,0 +1,10 @@
+com\projeto\designpatterns\api_pedidos\exception\OrderException.class
+com\projeto\designpatterns\api_pedidos\facade\OrderFacade.class
+com\projeto\designpatterns\api_pedidos\domain\enums\OrderStatus.class
+com\projeto\designpatterns\api_pedidos\dto\OrderResponseDTO.class
+com\projeto\designpatterns\api_pedidos\controller\OrderController.class
+com\projeto\designpatterns\api_pedidos\service\OrderService.class
+com\projeto\designpatterns\api_pedidos\domain\repository\OrderRepository.class
+com\projeto\designpatterns\api_pedidos\ApiPedidosApplication.class
+com\projeto\designpatterns\api_pedidos\domain\model\Order.class
+com\projeto\designpatterns\api_pedidos\dto\OrderRequestDTO.class
