@@ -1,6 +1,7 @@
 package com.projeto.designpatterns.api_pedidos.domain.model;
 
 import com.projeto.designpatterns.api_pedidos.domain.enums.OrderStatus;
+import com.projeto.designpatterns.api_pedidos.domain.enums.PaymentType;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -24,16 +25,23 @@ public class Order {
     @Column(name = "created_at")
     private LocalDateTime creationSchedule;
 
+    @Enumerated(EnumType.STRING)
+    private PaymentType paymentType;
+
     public Order() {
     }
 
     public Order(BigDecimal value) {
         this.value = value;
-        this.status = OrderStatus.CREATED;
+        this.status = OrderStatus.PENDING;
         this.creationSchedule = LocalDateTime.now();
     }
     public void markAsPaid(){
         this.status = OrderStatus.PAID;
+    }
+
+    public void markAsCanceled(){
+        this.status = OrderStatus.CANCELED;
     }
 
     public Long getId() {
@@ -47,6 +55,8 @@ public class Order {
     public OrderStatus getStatus() {
         return status;
     }
+
+    public PaymentType getPaymentType() { return paymentType; }
 
     public LocalDateTime getCreationSchedule() {
         return creationSchedule;
